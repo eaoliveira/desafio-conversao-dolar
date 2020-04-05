@@ -1,0 +1,11 @@
+$cor-fonte: #fff;
+$font-texto: 24px;
+$background-caixa: #e0a995;
+
+.container-cotacao-dia {
+  width: 100%;
+  min-height: 100%;
+  background-color: $background-caixa;
+  // display: flex;
+  // justify-content: space-evenly;
+}

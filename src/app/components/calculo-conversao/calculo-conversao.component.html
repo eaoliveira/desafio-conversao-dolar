@@ -1,0 +1,25 @@
+<div class="container-cotacao-dia" [formGroup]="cotacaoForm" >
+  <div class="valor-dolar">
+    <div class="label-valor">
+      <label for="valorConverter">Digite o valor em Dólar:</label>
+    </div>
+    <div class="input-valor">
+      <input    type="text" id="valorConversao" (change)="calcularResultado()"  formControlName="valorConversao" [igxMask]="'R$ 0000000,00'" />
+    </div>
+  </div>
+  <div class="valor-imposto-estado">
+    <div class="label-valor">
+      <label for="valorInposto">Taxa do estado:</label>
+    </div>
+    <div class="input-valor">
+      <input type="text" name="valorInposto" (change)="calcularResultado()"  id="valorTaxa" formControlName="valorTaxa"  [igxMask]="'00,00 %'"/>
+    </div>
+  </div>
+
+  <div class="inputs-tipo-pagamento">
+    <input type="radio" name="pagamento" (change)="calcularResultado()"  value="dinheiro" formControlName="pagamento" id="dinheiro">
+    <label for="dinheiro">Dinheiro</label>
+    <input type="radio" name="pagamento"  (change)="calcularResultado()"  formControlName="pagamento" value="cartao" id="cartao">
+    <label for="cartao">Cartão</label>
+  </div>
+</div>
