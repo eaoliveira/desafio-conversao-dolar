@@ -14,6 +14,7 @@ export class TelaPrincipalComponent implements OnInit {
   ngOnInit() {
   }
 
+  //envia resultado emitido pelo output do calculo conversão para o resultados
   showResultado(resultado: Resultado) {
     this.resultado = resultado
   }

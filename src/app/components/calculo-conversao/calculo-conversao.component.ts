@@ -28,22 +28,26 @@ export class CalculoConversaoComponent implements OnInit {
 
 
   constructor(private cotacaoService: CotacaoService) {
+
+    //declaração de form
     this.cotacaoForm = new FormGroup({
       pagamento: new FormControl("", Validators.required),
       valorConversao: new FormControl("", Validators.required),
       valorTaxa: new FormControl('', Validators.required)
     });
 
+    //atualiza automaticamente valores mudados nos forms
     this.cotacaoForm.valueChanges.subscribe(a => { this.calcularResultado() })
   }
 
   ngOnInit() {
-
+    //busca cotação
     this.cotacaoService.getCotacaoDia().subscribe(valor => {
       this.cotacaoDia = valor.USD.bid
     })
   }
 
+  //para clicar nos labels dos radio buttons
   setRadio(valor) {
     this.cotacaoForm.get('pagamento').setValue(valor)
     this.cotacaoForm.markAsTouched()
@@ -51,11 +55,8 @@ export class CalculoConversaoComponent implements OnInit {
 
   calcularResultado() {
 
-
-    console.log('change', this.cotacaoForm.get('pagamento').value)
+//somente executa se todos os campos estiverem válidos
     if (this.cotacaoForm.valid) {
-
-
 
       this.resultado.impostoEstado = this.cotacaoForm.get('valorTaxa').value
 

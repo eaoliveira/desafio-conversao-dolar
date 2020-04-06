@@ -8,6 +8,7 @@ import { Resultado } from 'src/app/models/resultado.model';
 })
 export class ResultadosComponent implements OnInit {
 
+  // input que receberá resultados
   @Input() resultado: Resultado = {
     iofValor: null,
     dolarComImposto: null,

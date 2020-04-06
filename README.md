@@ -1,5 +1,8 @@
 # DesafioCalculoConversao
 
+Desafio de conversão de moedas, criados com Angular, HTML5, CSS 
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 
 ## Development server
