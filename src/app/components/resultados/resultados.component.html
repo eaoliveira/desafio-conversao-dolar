@@ -2,27 +2,27 @@
 
   <div class="box-resultado">
     <div class="label">Iof Valor:</div>
-    <div class="resultado" *ngIf="resultado!=undefined">{{resultado.iofValor}}</div>
+    <div class="resultado" *ngIf="resultado!=undefined">R$ {{resultado.iofValor | number: '1.2-2'}}</div>
   </div>
   <div class="box-resultado">
     <div class="label">Imposto Estado:</div>
-    <div class="resultado" *ngIf="resultado!=undefined">{{resultado.impostoEstado}}</div>
+    <div class="resultado" *ngIf="resultado!=undefined">{{resultado.impostoEstado  | number: '1.2-2'}}%</div>
   </div>
   <div class="box-resultado">
     <div class="label">Dólar com Imposto:</div>
-    <div class="resultado" *ngIf="resultado!=undefined">{{resultado.dolarComImposto}}</div>
+    <div class="resultado" *ngIf="resultado!=undefined">U$ {{resultado.dolarComImposto | number: '1.2-2'}}</div>
   </div>
   <div class="box-resultado">
     <div class="label">Dólar sem Imposto:</div>
-    <div class="resultado" *ngIf="resultado!=undefined">{{resultado.dolarSemImposto}}</div>
+    <div class="resultado" *ngIf="resultado!=undefined">U$ {{resultado.dolarSemImposto | number: '1.2-2'}}</div>
   </div>
   <div class="box-resultado">
     <div class="label">Real sem Imposto:</div>
-    <div class="resultado" *ngIf="resultado!=undefined">{{resultado.realSemImposto}}</div>
+    <div class="resultado" *ngIf="resultado!=undefined">R$ {{resultado.realSemImposto | number: '1.2-2'}}</div>
   </div>
   <div class="box-resultado">
     <div class="label">Real com Imposto:</div>
-    <div class="resultado" *ngIf="resultado!=undefined">{{resultado.realComImposto}}</div>
+    <div class="resultado" *ngIf="resultado!=undefined">R$ {{resultado.realComImposto | number: '1.2-2'}}</div>
   </div>
 
 </div>

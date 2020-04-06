@@ -4,7 +4,7 @@ $background-caixa: #e0a995;
 $ccor_principal: #2de1c2;
 $cor_destaque: #ff6b6b;
 $cor_texto: #fff;
-$cor-texto-input:#ececec;
+$cor-texto-input: #ececec;
 
 .container-cotacao-dia {
   width: 100%;
@@ -14,21 +14,29 @@ $cor-texto-input:#ececec;
   // display: flex;
   // justify-content: space-evenly;
 
-  label{
+  label {
     font-size: $font-texto;
     color: $cor-fonte;
+    // padding-left: 10px;
   }
 
-  .input-valores{
+  .input-valores {
     text-align: right;
     color: $cor-texto-input;
   }
-  .inputs-tipo-pagamento{
+  .inputs-tipo-pagamento {
     display: flex;
-    justify-content: space-around;
-    .inputs-tipo-pagamento-item{
+    justify-content: flex-start;
+    align-items: center;
 
+    .inputs-tipo-pagamento-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 30%;
+      .label-radio {
+        padding-left: 10px;
+      }
     }
   }
-
 }
