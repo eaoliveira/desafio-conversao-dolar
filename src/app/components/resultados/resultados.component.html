@@ -1,12 +1,28 @@
-<div class="container-cotacao-dia" *ngIf="resultado!=undefined">
+<div class="container-resultado">
 
-  <div class="cotacao-dia-label">Iof Valor: {{resultado.iofValor}} </div>
-  <div class="cotacao-dia-label">Imposto Estado: {{resultado.impostoEstado}} </div>
-
-  <div class="cotacao-dia-label">Dolar com Imposto: {{resultado.dolarComImposto}} </div>
-  <div class="cotacao-dia-label">Dolar sem Imposto: {{resultado.dolarSemImposto}} </div>
-  <div class="cotacao-dia-label">Real sem Imposto: {{resultado.realSemImposto}} </div>
-  <div class="cotacao-dia-label">Real com Imposto: {{resultado.realComImposto}} </div>
-
+  <div class="box-resultado">
+    <div class="label">Iof Valor:</div>
+    <div class="resultado" *ngIf="resultado!=undefined">{{resultado.iofValor}}</div>
+  </div>
+  <div class="box-resultado">
+    <div class="label">Imposto Estado:</div>
+    <div class="resultado" *ngIf="resultado!=undefined">{{resultado.impostoEstado}}</div>
+  </div>
+  <div class="box-resultado">
+    <div class="label">Dólar com Imposto:</div>
+    <div class="resultado" *ngIf="resultado!=undefined">{{resultado.dolarComImposto}}</div>
+  </div>
+  <div class="box-resultado">
+    <div class="label">Dólar sem Imposto:</div>
+    <div class="resultado" *ngIf="resultado!=undefined">{{resultado.dolarSemImposto}}</div>
+  </div>
+  <div class="box-resultado">
+    <div class="label">Real sem Imposto:</div>
+    <div class="resultado" *ngIf="resultado!=undefined">{{resultado.realSemImposto}}</div>
+  </div>
+  <div class="box-resultado">
+    <div class="label">Real com Imposto:</div>
+    <div class="resultado" *ngIf="resultado!=undefined">{{resultado.realComImposto}}</div>
+  </div>
 
 </div>

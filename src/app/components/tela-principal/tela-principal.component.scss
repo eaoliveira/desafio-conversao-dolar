@@ -1,7 +1,18 @@
-.container-tela-principal {
-  min-width: 100%;
-  min-height: 350px;
-  background-color: #fff;
-  box-shadow: 4px 4px #8f8f8f77;
+$background-caixa: #ff7f51;
 
+.container-tela-principal {
+  width: 100%;
+  min-width: 430px;
+  min-height: 350px;
+  // background-color: #fff;
+  // box-shadow: 4px 4px #8f8f8f77;
+  display: flex;
+  padding: 20px;
+}
+
+.nome-aplicacao{
+  background-color: $background-caixa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

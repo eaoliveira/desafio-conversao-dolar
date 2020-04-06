@@ -1,0 +1,29 @@
+$ccor_principal: #2de1c2;
+$cor_destaque: #ff6b6b;
+$cor_texto: #fff;
+.container-resultado {
+  display: flex;
+  width: 40%;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+}
+.box-resultado {
+  margin: 10px;
+  width: 200px;
+  height: 80px;
+  background-color: $ccor_principal;
+
+  .label {
+    background-color: $cor_destaque;
+    font-size: 9px;
+    padding: 5px;
+    width: 100%;
+    color: $cor_texto;
+  }
+
+  .resultado {
+    font-size: 9px;
+    color: $cor_texto;
+  }
+}

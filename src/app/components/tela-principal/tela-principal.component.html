@@ -1,5 +1,12 @@
 <div class="container-tela-principal">
-  <app-cotacao-dia></app-cotacao-dia>
-  <app-calculo-conversao (resultadoEmitido)="showResultado($event)"></app-calculo-conversao>
-  <app-resultados [resultado]="resultado"></app-resultados>
+
+  <!-- <div class="nome-aplicacao">Conversao USD - BRL </div> -->
+  <div class="caixa1">
+    <app-cotacao-dia></app-cotacao-dia>
+    <app-calculo-conversao (resultadoEmitido)="showResultado($event)"></app-calculo-conversao>
+  </div>
+
+  <div class="caixa2">
+    <app-resultados [resultado]="resultado"></app-resultados>
+  </div>
 </div>

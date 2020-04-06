@@ -1,10 +1,11 @@
-<div class="container-cotacao-dia" [formGroup]="cotacaoForm" >
+<div class="container-cotacao-dia" [formGroup]="cotacaoForm">
   <div class="valor-dolar">
     <div class="label-valor">
       <label for="valorConverter">Digite o valor em Dólar:</label>
     </div>
     <div class="input-valor">
-      <input    type="text" id="valorConversao" (change)="calcularResultado()"  formControlName="valorConversao" [igxMask]="'R$ 0000000,00'" />
+      <input type="text" class="input-valores" id="valorConversao" (change)="calcularResultado()"
+        formControlName="valorConversao" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" />
     </div>
   </div>
   <div class="valor-imposto-estado">
@@ -12,14 +13,19 @@
       <label for="valorInposto">Taxa do estado:</label>
     </div>
     <div class="input-valor">
-      <input type="text" name="valorInposto" (change)="calcularResultado()"  id="valorTaxa" formControlName="valorTaxa"  [igxMask]="'00,00 %'"/>
+      <input type="text" class="input-valores" name="valorInposto" (change)="calcularResultado()" id="valorTaxa"
+        formControlName="valorTaxa" currencyMask [options]="{ suffix: '% ', thousands: '.', decimal: ',',prefix:'' }" />
     </div>
   </div>
 
   <div class="inputs-tipo-pagamento">
-    <input type="radio" name="pagamento" (change)="calcularResultado()"  value="dinheiro" formControlName="pagamento" id="dinheiro">
-    <label for="dinheiro">Dinheiro</label>
-    <input type="radio" name="pagamento"  (change)="calcularResultado()"  formControlName="pagamento" value="cartao" id="cartao">
-    <label for="cartao">Cartão</label>
+    <div class="inputs-tipo-pagamento-item">
+      <input type="radio" name="pagamento" (change)="calcularResultado()" value="dinheiro" formControlName="pagamento"
+        id="dinheiro">
+      <label for="dinheiro">Dinheiro</label></div>
+    <div class="inputs-tipo-pagamento-item">
+      <input type="radio" name="pagamento" (change)="calcularResultado()" formControlName="pagamento" value="cartao"
+        id="cartao">
+      <label for="cartao">Cartão</label></div>
   </div>
 </div>

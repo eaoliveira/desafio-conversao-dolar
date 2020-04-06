@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalculoConversaoComponent } from './components/calculo-conversao/calculo-conversao.component';
 import { IgxMaskModule } from 'igniteui-angular';
 import { ResultadosComponent } from './components/resultados/resultados.component';
+import { CurrencyMaskModule } from "ng2-currency-mask";
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ResultadosComponent } from './components/resultados/resultados.componen
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+    CurrencyMaskModule,
     BrowserAnimationsModule
   ],
   providers: [CotacaoService],
