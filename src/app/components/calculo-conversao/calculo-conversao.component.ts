@@ -15,7 +15,7 @@ const iofDinheiro = '6.38';
 export class CalculoConversaoComponent implements OnInit {
 
   @Output() resultadoEmitido = new EventEmitter()
-  private cotacaoForm: FormGroup;
+  public cotacaoForm: FormGroup;
   private cotacaoDia;
   private resultado: Resultado = {
     iofValor: null,

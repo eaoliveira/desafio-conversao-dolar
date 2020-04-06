@@ -8,7 +8,7 @@ import { CotacaoService } from 'src/app/services/cotacao.service';
 })
 export class CotacaoDiaComponent implements OnInit {
 
-  private cotacaoAutomatica;
+  public cotacaoAutomatica;
   constructor(private cotacaoService: CotacaoService) {
     //chama service para buscar informação de cotação
     this.cotacaoService.getCotacaoDia().subscribe(valor => {

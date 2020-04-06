@@ -8,7 +8,7 @@ import { Resultado } from 'src/app/models/resultado.model';
 })
 export class TelaPrincipalComponent implements OnInit {
 
-  private resultado: Resultado;
+  public resultado: Resultado;
   constructor() { }
 
   ngOnInit() {
