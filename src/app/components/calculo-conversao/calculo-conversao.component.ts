@@ -5,7 +5,7 @@ import { CotacaoService } from 'src/app/services/cotacao.service';
 
 
 const iofCartao = '1.1';
-const iofDinheiro = '06.4';
+const iofDinheiro = '6.38';
 @Component({
   selector: 'app-calculo-conversao',
   templateUrl: './calculo-conversao.component.html',
@@ -33,6 +33,8 @@ export class CalculoConversaoComponent implements OnInit {
       valorConversao: new FormControl("", Validators.required),
       valorTaxa: new FormControl('', Validators.required)
     });
+
+    this.cotacaoForm.valueChanges.subscribe(a => { this.calcularResultado() })
   }
 
   ngOnInit() {
@@ -42,30 +44,34 @@ export class CalculoConversaoComponent implements OnInit {
     })
   }
 
-
+  setRadio(valor) {
+    this.cotacaoForm.get('pagamento').setValue(valor)
+    this.cotacaoForm.markAsTouched()
+  }
 
   calcularResultado() {
-    console.log(this.cotacaoForm.get('pagamento').value)
 
-    this.cotacaoForm.markAllAsTouched()
 
+    console.log('change', this.cotacaoForm.get('pagamento').value)
     if (this.cotacaoForm.valid) {
 
-      if (this.cotacaoForm.get('pagamento').value == 'dinheiro') {
-        this.resultado.iofValor = String(Number(this.cotacaoForm.get('valorConversao').value) * Number(iofDinheiro))
-      } else {
-        this.resultado.iofValor = String(Number(this.cotacaoForm.get('valorConversao').value) * Number(iofCartao))
-      }
+
 
       this.resultado.impostoEstado = this.cotacaoForm.get('valorTaxa').value
 
       this.resultado.dolarSemImposto = this.cotacaoForm.get('valorConversao').value
 
-      this.resultado.dolarComImposto = String(Number(this.resultado.dolarSemImposto) + Number(this.resultado.dolarSemImposto) * (Number(this.resultado.impostoEstado)/100))
+      this.resultado.dolarComImposto = String(Number(this.resultado.dolarSemImposto) + Number(this.resultado.dolarSemImposto) * (Number(this.resultado.impostoEstado)))
 
       this.resultado.realSemImposto = String(Number(this.resultado.dolarComImposto) * Number(this.cotacaoDia))
-      this.resultado.realComImposto = String(Number(this.resultado.realSemImposto) + Number(this.resultado.realSemImposto) * Number(this.cotacaoDia))
+      if (this.cotacaoForm.get('pagamento').value == 'dinheiro') {
+        this.resultado.iofValor = String(Number(this.resultado.realSemImposto) * (Number(iofDinheiro) / 100))
+      } else {
+        this.resultado.iofValor = String(Number(this.resultado.realSemImposto) * (Number(iofCartao) / 100))
+      }
+      this.resultado.realComImposto = String(Number(this.resultado.realSemImposto) + Number(this.resultado.iofValor))
       this.resultadoEmitido.emit(this.resultado)
+      console.log(this.resultado)
 
     }
   }

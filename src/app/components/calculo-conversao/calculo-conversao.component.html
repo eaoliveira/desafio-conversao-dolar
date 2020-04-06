@@ -4,7 +4,7 @@
       <label for="valorConverter">Digite o valor em Dólar:</label>
     </div>
     <div class="input-valor">
-      <input type="text" class="input-valores" id="valorConversao" (change)="calcularResultado()"
+      <input type="text" class="input-valores" id="valorConversao" (click)="calcularResultado()"
         formControlName="valorConversao" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" />
     </div>
   </div>
@@ -13,19 +13,20 @@
       <label for="valorInposto">Taxa do estado:</label>
     </div>
     <div class="input-valor">
-      <input type="text" class="input-valores" name="valorInposto" (change)="calcularResultado()" id="valorTaxa"
+      <input type="text" class="input-valores" name="valorInposto" (click)="calcularResultado()" id="valorTaxa"
         formControlName="valorTaxa" currencyMask [options]="{ suffix: '% ', thousands: '.', decimal: ',',prefix:'' }" />
     </div>
   </div>
 
-  <div class="inputs-tipo-pagamento">
+  <div class="inputs-tipo-pagamento"   (click)="calcularResultado()">
     <div class="inputs-tipo-pagamento-item">
-      <input type="radio" name="pagamento" (change)="calcularResultado()" value="dinheiro" formControlName="pagamento"
-        id="dinheiro">
-      <label for="dinheiro" class="label-radio">Dinheiro</label></div>
+      <input type="radio" name="pagamento" value="dinheiro" formControlName="pagamento"
+        id="dinheiro"/>
+      <label for="dinheiro" class="label-radio" (click)="setRadio('dinheiro')">Dinheiro</label>
+    </div>
     <div class="inputs-tipo-pagamento-item">
-      <input type="radio" name="pagamento" (change)="calcularResultado()" formControlName="pagamento" value="cartao"
+    <input type="radio" name="pagamento" formControlName="pagamento" value="cartao"
         id="cartao">
-      <label for="cartao" class="label-radio">Cartão</label></div>
+      <label for="cartao" class="label-radio"  (click)="setRadio('cartao')">Cartão</label></div>
   </div>
 </div>
